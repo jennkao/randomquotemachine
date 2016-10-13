@@ -5,7 +5,8 @@ $(document).ready(function generateQuote() {
 	});
 
 	function successHandler(data) {
-		var quote= "<h2 class='quoteText'>" + data[0] + "</h2>";
+		var text = data[0]
+		var quote= "<h2 class='quoteText'>" + text + "</h2>";
 		$(".quote").html(quote);
 
 		//twitter button is removed and re-created with the new quote 
@@ -15,7 +16,7 @@ $(document).ready(function generateQuote() {
   		document.getElementById('twitter-share-button'),
   		{
   			size: "large",
-    		text: data[0] + " #RonSwansonWordsOfWisdom", 
+    		text: text + " #RonSwansonWordsOfWisdom", 
   		}
 		);
 		twttr.widgets.load();
